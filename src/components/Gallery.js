@@ -1,15 +1,15 @@
 import React from 'react';
-import GalleryItem from './Gallery-item';
+import Item from './Gallery-item';
 
 
 
-const Item = (pic) => {
-  return (
-    <li>
-      <img src={pic} alt=""/>
-    </li>
-  )
-}
+// const Item = (pic) => {
+//   return (
+//     <li>
+//       <img src={pic} alt=""/>
+//     </li>
+//   )
+// }
 
 
 // You pass props to a component via a JSX tag at the place where it's used.
