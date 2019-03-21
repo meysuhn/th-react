@@ -8,7 +8,7 @@ const Header = (props) => {
   return (
     <header className="App-header">
       <title>Chris' Mega App</title>
-      <SearchForm />
+      <SearchForm /> {/* As SearchForm is maintaining its own state nothing needs to be passed in here.*/}
       <Nav />
     </header>
   )
