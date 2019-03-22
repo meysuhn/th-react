@@ -1,48 +1,27 @@
 import React from 'react';
 
-// Here I need to use a controlled component
+// Controlled component
 
 
 
-// (4) Initialising state directly inside the class definition using a class property
 class SearchForm extends React.Component {
-
+  // Initialising state directly inside the class definition using a class property
   state = {
       value: ''
     };
 
-  //////////
-  // Define EVENT HANDLERS as a method on the class
-
-  // 'this' needs to be bound to the custom method(s).
-  // Various ways, but most common to use arrow functions given the lexical binding.
-
-  // (1) with a bind statement such as that directly below and the associated error handler
-  // handleChange = this.handleChange.bind(this);
-
-  // handleChange(event) {
-  //   this.setState({value: event.target.value.toUpperCase()});
-  // }
-
-  NOTE // this stays in this file
-  // (2) binding on the method call, see <form> below which replaces the line directly below.
-  // handleSubmit = this.handleSubmit.bind(this);
+  // Define event handlers as a method on the class (using two different approaches)
   handleSubmit(event) {
     // alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
-    // console.log(this);
     this.props.props.onSearch(this.query.value); // pass the searchForm state back to onSearch in app.js
     this.setState({value: ''}); // Reset state to clear search input field after submission.
   }
 
-  NOTE // this stays in this file
-  // (3) with an arrow function (not used here)
   handleChange = (event) => {
     this.setState({
       value: event.target.value});
   }
-
-  //////////
 
   render() {
     return (
@@ -67,3 +46,18 @@ class SearchForm extends React.Component {
 
 
 export default SearchForm;
+
+
+// Define EVENT HANDLERS as a method on the class (using two different approaches)
+// 'this' needs to be bound to the custom method(s).
+// Various ways, but most common to use arrow functions given the lexical binding.
+
+// (1) with a bind statement such as that directly below and the associated error handler
+// handleChange = this.handleChange.bind(this);
+
+// handleChange(event) {
+//   this.setState({value: event.target.value.toUpperCase()});
+// }
+
+// (2) binding on the method call, see <form> below which replaces the line directly below.
+// handleSubmit = this.handleSubmit.bind(this);

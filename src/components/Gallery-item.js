@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 const Item = (props) => {
   return (
     <li>
@@ -10,8 +9,6 @@ const Item = (props) => {
   )
 }
 
-// <img key={props.id} src={props.pic} alt=""/>
-// <Item key={pic.id} server={pic.server} secret={pic.secret}/>
 
 export default Item;
 

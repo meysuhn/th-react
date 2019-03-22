@@ -7,12 +7,7 @@ import { NavLink } from 'react-router-dom';
 const Nav = (props) => {
 
   const handleClick = (event) => {
-    // console.log('df');
-    // console.log(props);
-    // console.log(event.target.getAttribute('value'));
-    props.props.onSearch(event.target.getAttribute('value')); // pass the searchForm state back to onSearch in app.js
-    // this.setState({
-    //   value: event.target.value});
+    props.props.onSearch(event.target.getAttribute('value')); // pass the searchForm value (using getAttribute()) back to onSearch in app.js
   }
 
 

@@ -2,18 +2,12 @@ import React from 'react';
 import Item from './Gallery-item';
 
 
-// {
-//   (this.state.loading)
-//   ? <p>Loading...</p>
-//   :
-// }
-
 // You pass props to a component via a JSX tag at the place where it's used.
 const Gallery = (props) => {
   // If there are images then display, if no images display message to user.
   let images;
-  if (props.initialPics.images.length > 0) {
-    images = props.initialPics.images.map( pic =>
+  if (props.responseAPI.images.length > 0) {
+    images = props.responseAPI.images.map( pic =>
       <Item id={pic.id} server={pic.server} secret={pic.secret}/>
     );
   } else {
@@ -25,7 +19,7 @@ const Gallery = (props) => {
 
   return (
     <React.Fragment>
-      <h2>Showing Results for "{props.initialPics.title}"</h2>
+      <h2>Showing Results for "{props.responseAPI.title}"</h2>
       <ul>
         {images}
       </ul>
@@ -33,6 +27,8 @@ const Gallery = (props) => {
 
   )
 }
+
+export default Gallery;
 
 // <div className="photo-container">
 //
@@ -85,7 +81,3 @@ const Gallery = (props) => {
 //     </div>
 //   )
 // }
-
-
-
-export default Gallery;
