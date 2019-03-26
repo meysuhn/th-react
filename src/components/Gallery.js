@@ -8,7 +8,7 @@ const Gallery = (props) => {
   let images;
   if (props.responseAPI.images.length > 0) {
     images = props.responseAPI.images.map( pic =>
-      <Item id={pic.id} server={pic.server} secret={pic.secret}/>
+      <Item key={pic.id} id={pic.id} server={pic.server} secret={pic.secret}/>
     );
   } else {
     images = <li className="not-found">

@@ -43,7 +43,10 @@ class App extends Component {
     });
   }
 
-  render(images) {
+// <Route path="/" render={ () => <Header onSearch={this.performSearch}/>} />
+
+  render() {
+    console.log(this);
     return (
       <BrowserRouter> {/* Wrap the BrowserRouter around the whole app */}
         <div className="container">
@@ -57,6 +60,7 @@ class App extends Component {
                 <Route path="/HorseheadNebula" render={ () => <Gallery responseAPI={this.state}/>} />
                 <Route path="/CrabNebula" render={ () => <Gallery responseAPI={this.state}/>} />
                 <Route path="/OrionNebula" render={ () => <Gallery responseAPI={this.state}/>} />
+                <Route path="/Search" render={ () => <Gallery responseAPI={this.state}/>} />
                 <Route component={NotFound} />
               </Switch>
             }
