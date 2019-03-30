@@ -12,7 +12,7 @@ class SearchForm extends React.Component {
   // Define event handlers as a method on the class (using two different approaches)
   handleSubmit(event) {
     event.preventDefault();
-    this.props.props.onSearch(this.query.value); // pass the searchForm state back to onSearch in app.js
+    this.props.onSearch(this.query.value); // pass the searchForm state back to onSearch in app.js
     this.setState({value: ''}); // Reset state to clear search input field after submission.
   }
 

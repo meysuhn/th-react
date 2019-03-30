@@ -9,7 +9,7 @@ const Header = (props) => {
   return (
     <header className="App-header">
       <title>Nebula Views</title>
-      <SearchForm props={props}/>
+      <SearchForm onSearch={props.onSearch}/>
       <Nav props={props}/>
     </header>
   )
@@ -17,3 +17,5 @@ const Header = (props) => {
 
 
 export default Header;
+
+// <SearchForm props={props}/>
